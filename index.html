@@ -42,8 +42,27 @@
         </div>
 
     </header>
-    <section>
-
+    <section class="bg-gradient-to-r from-[#1E3A8A] to-[#2563EB] text-white flex flex-col items-center text-center py-10">
+        <div class="flex flex-col p-4 gap-5">
+            <h2 class="font-bold text-3xl">Descubra a qualidade do seu bairro em segundos</h2>
+            <p class="text-lg">Análise completa de infraestrutura, serviços e qualidade de vida em Portugal. Tome decisões informadas sobre onde morar.</p>
+        </div>
+        <form class="bg-white text-black p-5 m-10 rounded-xl flex flex-col w-85 gap-5">
+            <input type="text" id="infoInserida" placeholder="Digite um bairro ou freguesia..." required class="p-3 bg-gray-100 border border-gray-300 rounded-lg">
+            <select name="raios" id="escolhaDeRaio" required class="p-2 bg-gray-100 border border-gray-300 rounded-lg">
+                <option value="raio2">2km</option>
+            </select>
+            <button id="btnAnalise" class="text-white bg-blue-500 p-3 rounded-lg flex gap-2 items-center justify-center">
+                <img src="img/search.png" alt="Lupa como simbolo de pesquisa">
+                Análisar
+            </button>
+            <div class="flex items-center text-center gap-3 flex-wrap">
+                <span class="text-gray-300/90">Sugestões:</span>
+                <p id="sugestao" class="bg-gray-100/90 p-3 rounded-xl">Alfama, Lisboa</p>
+                <p id="sugestao" class="bg-gray-100/90 p-3 rounded-xl">Ribeira, Porto</p>
+                <p id="sugestao" class="bg-gray-100/90 p-3 rounded-xl">Baixa, Coimbra</p>
+            </div>
+        </form>
     </section>
     <section>
         
