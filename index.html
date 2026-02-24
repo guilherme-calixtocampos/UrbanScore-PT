@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>UrbanScore PT</title>
+</head>
+<body>
+      <header class="p-4">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+
+            <!-- Logo e Título-->
+            <div class="flex gap-4 items-center">
+                <img src="img/arrows.png" alt="Simbolo de ponto de localização" class="bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] p-2 rounded-lg">
+                <h1 class="text-xl font-bold bg-gradient-to-r from-[#1E3A8A] to-[#2563EB] bg-clip-text text-transparent">UrbanScore PT</h1>
+            </div>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex gap-6">
+                <a href="#" class="bg-gradient-to-r from-[#1E3A8A] to-[#2563EB] bg-clip-text text-transparent  text-lg">Início</a>
+                <a href="#" class="text-gray-500 text-lg">Comparar</a>
+                <a href="#" class="text-gray-500 text-lg">Favoritos</a>
+            </nav>
+
+            <!-- Botão Hamburguer (Mobile) -->
+            <button id="menuBtn" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden bg-blue-100 p-4 flex flex-col gap-4 rounded-lg">
+            <a href="#" class="bg-gradient-to-r from-[#1E3A8A] to-[#2563EB] bg-clip-text text-transparent  text-lg">Início</a>
+            <a href="#" class="text-gray-500 text-lg">Comparar</a>
+            <a href="#" class="text-gray-500 text-lg">Favoritos</a>
+        </div>
+
+    </header>
+    <section class="bg-gradient-to-r from-[#1E3A8A] to-[#2563EB] text-white flex flex-col items-center text-center py-10">
+        <div class="flex flex-col p-4 gap-5">
+            <h2 class="font-bold text-3xl">Descubra a qualidade do seu bairro em segundos</h2>
+            <p class="text-lg">Análise completa de infraestrutura, serviços e qualidade de vida em Portugal. Tome decisões informadas sobre onde morar.</p>
+        </div>
+        <form class="bg-white text-black p-5 m-10 rounded-xl flex flex-col w-85 gap-5">
+            <input type="text" id="infoInserida" placeholder="Digite um bairro ou freguesia..." required class="p-3 bg-gray-100 border border-gray-300 rounded-lg">
+            <select name="raios" id="escolhaDeRaio" required class="p-2 bg-gray-100 border border-gray-300 rounded-lg">
+                <option value="raio2">2km</option>
+            </select>
+            <button id="btnAnalise" class="text-white bg-blue-500 p-3 rounded-lg flex gap-2 items-center justify-center">
+                <img src="img/search.png" alt="Lupa como simbolo de pesquisa">
+                Análisar
+            </button>
+            <div class="flex items-center text-center gap-3 flex-wrap">
+                <span class="text-gray-300/90">Sugestões:</span>
+                <p id="sugestao" class="bg-gray-100/90 p-3 rounded-xl">Alfama, Lisboa</p>
+                <p id="sugestao" class="bg-gray-100/90 p-3 rounded-xl">Ribeira, Porto</p>
+                <p id="sugestao" class="bg-gray-100/90 p-3 rounded-xl">Baixa, Coimbra</p>
+            </div>
+        </form>
+    </section>
+    <section>
+        
+    </section>
+    <section>
+        
+    </section>
+    <footer>
+
+    </footer>
+    <script>
+        const menuBtn = document.getElementById("menuBtn")
+        const mobileMenu = document.getElementById("mobileMenu")
+
+        menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden")
+        })
+    </script>
+</body>
+</html>
