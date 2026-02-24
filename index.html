@@ -47,7 +47,7 @@
             <h2 class="font-bold text-3xl">Descubra a qualidade do seu bairro em segundos</h2>
             <p class="text-lg">Análise completa de infraestrutura, serviços e qualidade de vida em Portugal. Tome decisões informadas sobre onde morar.</p>
         </div>
-        <form class="bg-white text-black p-5 m-10 rounded-xl flex flex-col w-85 gap-5">
+        <form class="bg-white text-black p-5 m-10 rounded-xl flex flex-col min-w-85 gap-5">
             <input type="text" id="infoInserida" placeholder="Digite um bairro ou freguesia..." required class="p-3 bg-gray-100 border border-gray-300 rounded-lg">
             <select name="raios" id="escolhaDeRaio" required class="p-2 bg-gray-100 border border-gray-300 rounded-lg">
                 <option value="raio2">2km</option>
@@ -63,12 +63,91 @@
                 <p id="sugestao" class="bg-gray-100/90 p-3 rounded-xl">Baixa, Coimbra</p>
             </div>
         </form>
+        <div class="bg-white text-black p-5 m-10 rounded-xl flex flex-col min-w-85 gap-5 hidden"> <!-- aparecerá quando gerar os dados -->
+            <!-- cria os elementos que trará da api -->
+        </div>
+
     </section>
-    <section>
-        
+    <section class="flex flex-col items-center bg-gray-100/40 px-5 pb-20">
+        <div class="flex flex-col items-center text-center gap-5 py-10">
+            <h3 class="font-bold text-2xl">Como funciona?</h3>
+            <p class="text-gray-400 text-lg">Explore a qualidade de vida nos bairros de Portugal através da nossa análise detalhada</p>
+        </div>
+        <ul class="flex flex-col md:flex-row justify-center gap-5 ">
+            <li class="bg-white p-5 rounded-xl shadow-xl">
+                <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    <p class="text-2xl font-bold text-[#2563EB]">1</p>
+                </div>
+                <p class="font-bold text-xl my-2">Pesquise</p>
+                <p class="text-gray-500">Digite o nome de um bairro ou freguesia em Portugal que deseja analisar</p>
+            </li>
+            <li class="bg-white p-5 rounded-xl shadow-xl">
+                <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    <p class="text-2xl font-bold text-[#2563EB]">2</p>
+                </div>
+                <p class="font-bold text-xl my-2">Análise</p>
+                <p class="text-gray-500">Visualize no mapa interativo a localização de escolas, hospitais e serviços essenciais</p>
+            </li>
+            <li class="bg-white p-5 rounded-xl shadow-xl">
+                <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    <p class="text-2xl font-bold text-[#2563EB]">3</p>
+                </div>
+                <p class="font-bold text-xl my-2">Compare</p>
+                <p class="text-gray-500">Receba um score detalhado e compare diferentes regiões para tomar a melhor decisão</p>
+            </li>
+        </ul>
     </section>
-    <section>
-        
+    <section class="flex flex-col items-center bg-gray-100/40 px-5 pb-20">
+        <div class="flex flex-col items-center text-center gap-5 py-10">
+            <h3 class="font-bold text-2xl">Localizações Populares</h3>
+        </div>
+        <ul class="flex flex-col md:flex-row md:flex-wrap justify-center gap-5 ">
+            <li class="flex bg-white p-5 rounded-xl shadow-xl md:hover:w-90 md:h-25 md:hover:h-30 w-80 justify-between">
+                <div class="flex flex-col justify-center items-center text-center">
+                    <p class="font-bold text-xl my-2">Alfama, Lisboa</p>
+                    <p class="text-gray-500">Clique para explorar</p>
+                </div>
+                <div class="flex items-center justify-center items-center text-center">
+                    <p class="text-2xl font-bold text-[#2563EB]">8.4</p>
+                </div>
+            </li>
+            <li class="flex bg-white p-5 rounded-xl shadow-xl md:hover:w-90 md:h-25 md:hover:h-30 w-80 justify-between">
+                <div class="flex flex-col justify-center items-center text-center">
+                    <p class="font-bold text-xl my-2">Ribeira, Porto</p>
+                    <p class="text-gray-500">Clique para explorar</p>
+                </div>
+                <div class="flex items-center justify-center items-center text-center">
+                    <p class="text-2xl font-bold text-[#2563EB]">8.4</p>
+                </div>
+            </li>
+            <li class="flex bg-white p-5 rounded-xl shadow-xl md:hover:w-90 md:h-25 md:hover:h-30 w-80 justify-between">
+                <div class="flex flex-col justify-center items-center text-center">
+                    <p class="font-bold text-xl my-2">Baixa-Chiado, Lisboa</p>
+                    <p class="text-gray-500">Clique para explorar</p>
+                </div>
+                <div class="flex items-center justify-center items-center text-center">
+                    <p class="text-2xl font-bold text-[#2563EB]">8.4</p>
+                </div>
+            </li>
+            <li class="flex bg-white p-5 rounded-xl shadow-xl md:hover:w-90 md:h-25 md:hover:h-30 w-80 justify-between">
+                <div class="flex flex-col justify-center items-center text-center">
+                    <p class="font-bold text-xl my-2">Matosinhos</p>
+                    <p class="text-gray-500">Clique para explorar</p>
+                </div>
+                <div class="flex items-center justify-center items-center text-center">
+                    <p class="text-2xl font-bold text-[#2563EB]">8.4</p>
+                </div>
+            </li>
+            <li class="flex bg-white p-5 rounded-xl shadow-xl md:hover:w-90 md:h-25 md:hover:h-30 w-80 justify-between">
+                <div class="flex flex-col justify-center items-center text-center">
+                    <p class="font-bold text-xl my-2">Baixa, Coimbra</p>
+                    <p class="text-gray-500">Clique para explorar</p>
+                </div>
+                <div class="flex items-center justify-center items-center text-center">
+                    <p class="text-2xl font-bold text-[#2563EB]">8.4</p>
+                </div>
+            </li>
+        </ul>
     </section>
     <footer>
 
