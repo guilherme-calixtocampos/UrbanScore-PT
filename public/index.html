@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>UrbanScore PT</title>
+</head>
+<body>
+      <header class="p-4">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+
+            <!-- Logo e Título-->
+            <div class="flex gap-4 items-center">
+                <img src="img/arrows.png" alt="Simbolo de ponto de localização" class="bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] p-2 rounded-lg">
+                <h1 class="text-xl font-bold bg-gradient-to-r from-[#1E3A8A] to-[#2563EB] bg-clip-text text-transparent">UrbanScore PT</h1>
+            </div>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex gap-6">
+                <a href="#" class="bg-gradient-to-r from-[#1E3A8A] to-[#2563EB] bg-clip-text text-transparent  text-lg">Início</a>
+                <a href="#" class="text-gray-500 text-lg">Comparar</a>
+                <a href="#" class="text-gray-500 text-lg">Favoritos</a>
+            </nav>
+
+            <!-- Botão Hamburguer (Mobile) -->
+            <button id="menuBtn" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden bg-blue-100 p-4 flex flex-col gap-4 rounded-lg">
+            <a href="#" class="bg-gradient-to-r from-[#1E3A8A] to-[#2563EB] bg-clip-text text-transparent  text-lg">Início</a>
+            <a href="#" class="text-gray-500 text-lg">Comparar</a>
+            <a href="#" class="text-gray-500 text-lg">Favoritos</a>
+        </div>
+
+    </header>
+    <section class="bg-gradient-to-r from-[#1E3A8A] to-[#2563EB] text-white flex flex-col items-center text-center py-10">
+        <div class="flex flex-col p-4 gap-5">
+            <h2 class="font-bold text-3xl">Descubra a qualidade do seu bairro em segundos</h2>
+            <p class="text-lg">Análise completa de infraestrutura, serviços e qualidade de vida em Portugal. Tome decisões informadas sobre onde morar.</p>
+        </div>
+        <form class="bg-white text-black p-5 m-10 rounded-xl flex flex-col min-w-85 gap-5">
+            <input type="text" id="infoInserida" placeholder="Digite um bairro ou freguesia..." required class="p-3 bg-gray-100 border border-gray-300 rounded-lg">
+            <select name="raios" id="escolhaDeRaio" required class="p-2 bg-gray-100 border border-gray-300 rounded-lg">
+                <option value="1">1km</option>
+                <option value="2">2km</option>
+                <option value="5">5km</option>
+                <option value="10">10km</option>
+            </select>
+            <button id="btnAnalise" class="text-white bg-blue-500 p-3 rounded-lg flex gap-2 items-center justify-center">
+                <img src="img/search.png" alt="Lupa como simbolo de pesquisa">
+                Análisar
+            </button>
+            <div class="flex items-center text-center gap-3 flex-wrap">
+                <span class="text-gray-300/90">Sugestões:</span>
+                <p id="sugestao" class="bg-gray-100/90 p-3 rounded-xl">Alfama, Lisboa</p>
+                <p id="sugestao" class="bg-gray-100/90 p-3 rounded-xl">Ribeira, Porto</p>
+                <p id="sugestao" class="bg-gray-100/90 p-3 rounded-xl">Baixa, Coimbra</p>
+            </div>
+        </form>
+        <div class="bg-white text-black p-5 m-10 rounded-xl flex flex-col min-w-85 gap-5 hidden exibeResultado"> <!-- aparecerá quando gerar os dados -->
+            <!-- cria os elementos que trará da api -->
+        </div>
+
+    </section>
+    <section class="flex flex-col items-center bg-gray-100/40 px-5 pb-20">
+        <div class="flex flex-col items-center text-center gap-5 py-10">
+            <h3 class="font-bold text-2xl">Como funciona?</h3>
+            <p class="text-gray-400 text-lg">Explore a qualidade de vida nos bairros de Portugal através da nossa análise detalhada</p>
+        </div>
+        <ul class="flex flex-col md:flex-row justify-center gap-5 ">
+            <li class="bg-white p-5 rounded-xl shadow-xl">
+                <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    <p class="text-2xl font-bold text-[#2563EB]">1</p>
+                </div>
+                <p class="font-bold text-xl my-2">Pesquise</p>
+                <p class="text-gray-500">Digite o nome de um bairro ou freguesia em Portugal que deseja analisar</p>
+            </li>
+            <li class="bg-white p-5 rounded-xl shadow-xl">
+                <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    <p class="text-2xl font-bold text-[#2563EB]">2</p>
+                </div>
+                <p class="font-bold text-xl my-2">Análise</p>
+                <p class="text-gray-500">Visualize no mapa interativo a localização de escolas, hospitais e serviços essenciais</p>
+            </li>
+            <li class="bg-white p-5 rounded-xl shadow-xl">
+                <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    <p class="text-2xl font-bold text-[#2563EB]">3</p>
+                </div>
+                <p class="font-bold text-xl my-2">Compare</p>
+                <p class="text-gray-500">Receba um score detalhado e compare diferentes regiões para tomar a melhor decisão</p>
+            </li>
+        </ul>
+    </section>
+    <section class="flex flex-col items-center bg-gray-100/40 px-5 pb-20">
+        <div class="flex flex-col items-center text-center gap-5 py-10">
+            <h3 class="font-bold text-2xl">Localizações Populares</h3>
+        </div>
+        <ul class="flex flex-col md:flex-row md:flex-wrap justify-center gap-5 ">
+            <li class="flex bg-white p-5 rounded-xl shadow-xl md:hover:w-90 md:h-25 md:hover:h-30 w-80 justify-between">
+                <div class="flex flex-col justify-center items-center text-center">
+                    <p class="font-bold text-xl my-2">Alfama, Lisboa</p>
+                    <p class="text-gray-500">Clique para explorar</p>
+                </div>
+                <div class="flex items-center justify-center items-center text-center">
+                    <p class="text-2xl font-bold text-[#2563EB]">8.4</p>
+                </div>
+            </li>
+            <li class="flex bg-white p-5 rounded-xl shadow-xl md:hover:w-90 md:h-25 md:hover:h-30 w-80 justify-between">
+                <div class="flex flex-col justify-center items-center text-center">
+                    <p class="font-bold text-xl my-2">Ribeira, Porto</p>
+                    <p class="text-gray-500">Clique para explorar</p>
+                </div>
+                <div class="flex items-center justify-center items-center text-center">
+                    <p class="text-2xl font-bold text-[#2563EB]">8.4</p>
+                </div>
+            </li>
+            <li class="flex bg-white p-5 rounded-xl shadow-xl md:hover:w-90 md:h-25 md:hover:h-30 w-80 justify-between">
+                <div class="flex flex-col justify-center items-center text-center">
+                    <p class="font-bold text-xl my-2">Baixa-Chiado, Lisboa</p>
+                    <p class="text-gray-500">Clique para explorar</p>
+                </div>
+                <div class="flex items-center justify-center items-center text-center">
+                    <p class="text-2xl font-bold text-[#2563EB]">8.4</p>
+                </div>
+            </li>
+            <li class="flex bg-white p-5 rounded-xl shadow-xl md:hover:w-90 md:h-25 md:hover:h-30 w-80 justify-between">
+                <div class="flex flex-col justify-center items-center text-center">
+                    <p class="font-bold text-xl my-2">Matosinhos</p>
+                    <p class="text-gray-500">Clique para explorar</p>
+                </div>
+                <div class="flex items-center justify-center items-center text-center">
+                    <p class="text-2xl font-bold text-[#2563EB]">8.4</p>
+                </div>
+            </li>
+            <li class="flex bg-white p-5 rounded-xl shadow-xl md:hover:w-90 md:h-25 md:hover:h-30 w-80 justify-between">
+                <div class="flex flex-col justify-center items-center text-center">
+                    <p class="font-bold text-xl my-2">Baixa, Coimbra</p>
+                    <p class="text-gray-500">Clique para explorar</p>
+                </div>
+                <div class="flex items-center justify-center items-center text-center">
+                    <p class="text-2xl font-bold text-[#2563EB]">8.4</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <footer class="mx-auto px-4 py-4 flex items-center flex-col md:justify-center md:flex-row md:p-5 md:gap-10 gap-4 bg-blue-900 text-white">
+        <div class="flex flex-row items-center gap-4">
+            <img src="img/arrows.png" alt="Simbolo de ponto de localização" class="bg-gradient-to-br from-blue-500 to-blue-800 p-2 rounded-lg">
+            <h4 class="text-xl font-bold">UrbanScore PT</h4>
+        </div>
+        <div>
+            <p class="">Desenvolvido por <a href="www.linkedin.com/in/guilherme-calixto-campos" class="underline">Guilherme Calixto Campos</a></p>
+        </div>
+    </footer>
+    <script type="module" src="./js/api.js"></script>
+    <script type="module" src="./js/ui.js"></script>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
