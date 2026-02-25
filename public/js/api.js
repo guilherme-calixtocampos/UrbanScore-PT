@@ -1,7 +1,9 @@
+const BASE_URL = window.location.origin; // pega http(s)://seudominio.onrender.com
+
 const api = {
     async buscaLatLon(endereco) {
         try {
-            const response = await fetch(`/api/nominatim?q=${encodeURIComponent(endereco)}`);
+            const response = await fetch(`${BASE_URL}/api/nominatim?q=${encodeURIComponent(endereco)}`);
             const data = await response.json();
             return data;
         } catch (error) {
@@ -12,7 +14,7 @@ const api = {
 
     async buscaPOIs(lat, lon, raio) {
         try {
-            const response = await fetch(`/api/overpass?lat=${lat}&lon=${lon}&raio=${raio}`);
+            const response = await fetch(`${BASE_URL}/api/overpass?lat=${lat}&lon=${lon}&raio=${raio}`);
             const data = await response.json();
             return data;
         } catch (error) {
