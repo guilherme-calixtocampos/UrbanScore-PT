@@ -32,10 +32,26 @@ const ui = {
                         const tipo = poi.tags?.amenity || 'Desconhecido';
                         const rua = poi.tags?.['addr:street'] || 'Rua não disponível';
                         const numero = poi.tags?.['addr:housenumber'] || 'Número não disponível';
-                        listaPOIs.innerHTML += `<li>
-                            <strong>${nome}</strong> - ${tipo}<br>
-                            Endereço: ${rua}, ${numero}
-                        </li>`;
+
+                        const li = document.createElement('li')
+                        const pNome = document.createElement('p')
+                        const pTipo = document.createElement('p')
+                        const pRua = document.createElement('p')
+                        const pNumero = document.createElement('p')
+
+                        pNome.innerHTML = nome
+                        pTipo.innerHTML = tipo
+                        pRua.innerHTML = rua
+                        pNumero.innerHTML = numero
+
+                        li.appendChild(pNome)
+                        li.appendChild(pTipo)
+                        li.appendChild(pRua)
+                        li.appendChild(pNumero)
+
+                        listaPOIs.appendChild(li)
+
+                        
                     });
                 } else {
                     listaPOIs.innerHTML = '<li>Nenhum POI encontrado neste raio.</li>';
