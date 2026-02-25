@@ -50,7 +50,10 @@
         <form class="bg-white text-black p-5 m-10 rounded-xl flex flex-col min-w-85 gap-5">
             <input type="text" id="infoInserida" placeholder="Digite um bairro ou freguesia..." required class="p-3 bg-gray-100 border border-gray-300 rounded-lg">
             <select name="raios" id="escolhaDeRaio" required class="p-2 bg-gray-100 border border-gray-300 rounded-lg">
-                <option value="raio2">2km</option>
+                <option value="1">1km</option>
+                <option value="2">2km</option>
+                <option value="5">5km</option>
+                <option value="10">10km</option>
             </select>
             <button id="btnAnalise" class="text-white bg-blue-500 p-3 rounded-lg flex gap-2 items-center justify-center">
                 <img src="img/search.png" alt="Lupa como simbolo de pesquisa">
@@ -63,7 +66,7 @@
                 <p id="sugestao" class="bg-gray-100/90 p-3 rounded-xl">Baixa, Coimbra</p>
             </div>
         </form>
-        <div class="bg-white text-black p-5 m-10 rounded-xl flex flex-col min-w-85 gap-5 hidden"> <!-- aparecerá quando gerar os dados -->
+        <div class="bg-white text-black p-5 m-10 rounded-xl flex flex-col min-w-85 gap-5 hidden exibeResultado"> <!-- aparecerá quando gerar os dados -->
             <!-- cria os elementos que trará da api -->
         </div>
 
@@ -158,13 +161,8 @@
             <p class="">Desenvolvido por <a href="www.linkedin.com/in/guilherme-calixto-campos" class="underline">Guilherme Calixto Campos</a></p>
         </div>
     </footer>
-    <script>
-        const menuBtn = document.getElementById("menuBtn")
-        const mobileMenu = document.getElementById("mobileMenu")
-
-        menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden")
-        })
-    </script>
+    <script type="module" src="./js/api.js"></script>
+    <script type="module" src="./js/ui.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>
