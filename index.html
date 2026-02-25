@@ -63,7 +63,7 @@
                 <p id="sugestao" class="bg-gray-100/90 p-3 rounded-xl">Baixa, Coimbra</p>
             </div>
         </form>
-        <div class="bg-white text-black p-5 m-10 rounded-xl flex flex-col min-w-85 gap-5 hidden"> <!-- aparecerá quando gerar os dados -->
+        <div class="bg-white text-black p-5 m-10 rounded-xl flex flex-col min-w-85 gap-5 hidden exibeResultado"> <!-- aparecerá quando gerar os dados -->
             <!-- cria os elementos que trará da api -->
         </div>
 
@@ -158,13 +158,8 @@
             <p class="">Desenvolvido por <a href="www.linkedin.com/in/guilherme-calixto-campos" class="underline">Guilherme Calixto Campos</a></p>
         </div>
     </footer>
-    <script>
-        const menuBtn = document.getElementById("menuBtn")
-        const mobileMenu = document.getElementById("mobileMenu")
-
-        menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden")
-        })
-    </script>
+    <script type="module" src="./js/nominatimAPI.js"></script>
+    <script type="module" src="./js/ui.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>
